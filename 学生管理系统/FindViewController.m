@@ -20,9 +20,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    _snameArr = [[NSMutableArray alloc] init];
-    _sageArr = [[NSMutableArray alloc] init];
-    _sclassArr = [[NSMutableArray alloc] init];
     
     UIImage *backImage = [UIImage imageNamed:@"背景17.jpg"];
     UIImageView *backImageView = [[UIImageView alloc] initWithImage:backImage];
@@ -111,6 +108,9 @@
 
 - (void)find{
     
+    _snameArr = [[NSMutableArray alloc] init];
+    _sageArr = [[NSMutableArray alloc] init];
+    _sclassArr = [[NSMutableArray alloc] init];
     BOOL find = NO;
     int i = 0;
     int j;

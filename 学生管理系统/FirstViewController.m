@@ -29,7 +29,7 @@
     backImageView.frame = self.view.bounds;
     [self.view insertSubview:backImageView atIndex:0];
     
-    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 100, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height - 300) style:UITableViewStylePlain];
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 100, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height - 500) style:UITableViewStylePlain];
     [self.view addSubview:_tableView];
     _tableView.dataSource = self;
     _tableView.delegate = self;
@@ -79,9 +79,9 @@
     
     
     _nameArr = [[NSMutableArray alloc] init];
-    [_nameArr addObject:@"鸡大仙"];
-    [_nameArr addObject:@"张钢蛋"];
-    [_nameArr addObject:@"王二狗"];
+    [_nameArr addObject:@"张三"];
+    [_nameArr addObject:@"李四"];
+    [_nameArr addObject:@"王麻子"];
     [_nameArr addObject:@"hahaha"];
     
     _ageArr = [[NSMutableArray alloc ]init];
@@ -91,10 +91,10 @@
     [_ageArr addObject:@"123"];
     
     _classArr = [[NSMutableArray alloc] init];
-    [_classArr addObject:@"神经a班"];
-    [_classArr addObject:@"神经b班"];
-    [_classArr addObject:@"神经c班"];
-    [_classArr addObject:@"神经d班"];
+    [_classArr addObject:@"a班"];
+    [_classArr addObject:@"b班"];
+    [_classArr addObject:@"c班"];
+    [_classArr addObject:@"d班"];
     /*
     _stuArr = [[NSMutableArray alloc] init];
     Student *stu1 = [[Student alloc] init];
@@ -138,7 +138,7 @@
     return 70;
 }
 
-- (void)add{
+- (void)add {
     
     AddViewController *addRoot = [[AddViewController alloc] init];
     addRoot.nameArr = _nameArr;
@@ -149,7 +149,7 @@
     
 }
 
-- (void)delete{
+- (void)delete {
     
     DeleteViewController *deleteRoot = [[DeleteViewController alloc] init];
     deleteRoot.nameArr = _nameArr;

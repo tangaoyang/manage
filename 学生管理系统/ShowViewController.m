@@ -29,7 +29,7 @@
     
     UILabel *label1 = [[UILabel alloc] init];
     [self.view addSubview:label1];
-    label1.text = @"唐傲洋的";
+    label1.text = @"TAY的";
     label1.textColor = [UIColor whiteColor];
     label1.frame = CGRectMake(0, 150, 414, 40);
     label1.textAlignment = NSTextAlignmentCenter;

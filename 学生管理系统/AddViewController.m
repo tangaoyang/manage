@@ -123,26 +123,33 @@
 
 - (void)add{
     
-    int i;
-    for(i = 0; i< _nameArr.count; i++){
-        if([_nameArr[i] isEqualToString:_nameTextField.text]){
-            break;
-        }
-    }
-    if(i != _nameArr.count){
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"姓名有重复，请核对后再试！" preferredStyle:UIAlertControllerStyleAlert];
+    if(_ageTextField.text.length <= 0 || _nameTextField.text.length <= 0 || _classTextField.text.length <= 0){
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"输入不能为空！" preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *sure = [UIAlertAction actionWithTitle:@"sure" style:UIAlertActionStyleCancel handler:nil];
         [alert addAction:sure];
         [self presentViewController:alert animated:NO completion:nil];
-    }
-    if(i == _nameArr.count){
-        [self dismissViewControllerAnimated:NO completion:nil];
-        if([_addDelegate respondsToSelector:@selector(pass:)]) {
-            Student *stu = [[Student alloc] init];
-            stu.nameStr = _nameTextField.text;
-            stu.ageStr = _ageTextField.text;
-            stu.classStr = _classTextField.text;
-            [_addDelegate pass:stu];
+    } else {
+        int i;
+        for(i = 0; i< _nameArr.count; i++){
+            if([_nameArr[i] isEqualToString:_nameTextField.text]){
+                break;
+            }
+        }
+        if(i != _nameArr.count){
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"姓名有重复，请核对后再试！" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *sure = [UIAlertAction actionWithTitle:@"sure" style:UIAlertActionStyleCancel handler:nil];
+            [alert addAction:sure];
+            [self presentViewController:alert animated:NO completion:nil];
+        }
+        if(i == _nameArr.count){
+            [self dismissViewControllerAnimated:NO completion:nil];
+            if([_addDelegate respondsToSelector:@selector(pass:)]) {
+                Student *stu = [[Student alloc] init];
+                stu.nameStr = _nameTextField.text;
+                stu.ageStr = _ageTextField.text;
+                stu.classStr = _classTextField.text;
+                [_addDelegate pass:stu];
+            }
         }
     }
 }
